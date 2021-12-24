@@ -35,6 +35,11 @@ const useStyles = makeStyles({
         alignItems:"center",
         marginTop:"20px",
         justifyContent:"space-between"
+    },
+    texta:{
+      position: "relative",
+
+    left: "-7%"
     }
 })
 const Root = styled('span')`
@@ -111,7 +116,12 @@ function Price() {
             <Typography variant="subtitle2" className={classes.space}>
                 Price
             </Typography>
+            <div className={classes.unlockdiv}>
             <TextField fullWidth id="standard-basic" placeholder="Amount" variant="standard" />
+            <Typography variant="subtitle2" className={classes.texta}>
+                ETH
+            </Typography>
+            </div>
             <Typography style={{ display: 'block' }} variant="caption" className={classes.text}>
                 Service Fee <span className={classes.price}>{price}%</span>
             </Typography>
