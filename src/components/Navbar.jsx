@@ -5,6 +5,11 @@ import { ArrowDownward, ArrowDownwardSharp, ArrowDropDown, Keyboard, KeyboardArr
 import logo from '../img/logo.png'
 
 const useStyles = makeStyles({
+    app: {
+        borderBottom: "2px solid #e6e6e6",
+        boxShadow: "none!important",
+        backgroundColor:"white!important"
+    },
     nav: {
         backgroundColor: "white",
         color: "grey",
@@ -28,7 +33,7 @@ const useStyles = makeStyles({
     },
     icons: {
         display: "flex",
-        
+
     },
 
 
@@ -47,8 +52,9 @@ const ColorButton = styled(Button)(({
     },
 }));
 const AlertButton = styled(Button)(({
-    borderRadius: "10em",
-    padding: "0",
+    borderRadius: "50%",
+    minWidth:"50!important",
+    padding: "0!important",
     color: "grey",
     backgroundColor: "white",
     '&:hover': {
@@ -62,7 +68,7 @@ const AlertButton = styled(Button)(({
     },
 }));
 const NotifButton = styled(Button)(({
-    
+
     borderRadius: "10em",
     border: "2px solid rgba(25, 118, 210, 0.5)",
     color: "#158fce",
@@ -91,7 +97,7 @@ export default function Navbar() {
     };
     const classes = useStyles()
     return (
-        <AppBar position='static'>
+        <AppBar className={classes.app} position='static'>
             <Toolbar className={classes.nav}>
 
 
