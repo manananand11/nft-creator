@@ -1,5 +1,5 @@
 import { HelpOutlineOutlined } from '@mui/icons-material'
-import { Button, TextField, Typography } from '@mui/material'
+import { Avatar, Button, TextField, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import React from 'react'
 import Card3 from './Card3'
@@ -53,18 +53,31 @@ const useStyles = makeStyles({
         marginTop: "50px",
         justifyContent: "space-between"
     },
+    undiv: {
+        display: "flex",
+        alignItems: "center",
+        
+        justifyContent: "space-between"
+    },
+    above:{
+        display: "flex",
+        flexDirection: "column"
+    },
     buttonsmall: {
         color: "grey!important",
         fontWeight: "500!important",
         fontSize: "12px!important"
+    },
+    avatar:{
+        margin:"10px"
     }
 
 })
 
 export default function Collection() {
     const [open, setOpen] = React.useState(false);
-    const [advText,setAdvText] = React.useState("HIDE ADVANCED SETTINGS");
-    const [showAdv,setShowAdv]=React.useState(true)
+    const [advText, setAdvText] = React.useState("HIDE ADVANCED SETTINGS");
+    const [showAdv, setShowAdv] = React.useState(true)
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -73,18 +86,17 @@ export default function Collection() {
     const handleClose = () => {
         setOpen(false);
     };
-    const handleAdvSet = () =>{
-        if(showAdv)
-        {
+    const handleAdvSet = () => {
+        if (showAdv) {
             setAdvText("SHOW ADVANCED SETTINGS")
             setShowAdv(false)
         }
-        else{
+        else {
             setAdvText("HIDE ADVANCED SETTINGS")
             setShowAdv(true)
         }
-        
-        
+
+
     }
     const classes = useStyles()
     return (
@@ -117,19 +129,19 @@ export default function Collection() {
                 <Button onClick={handleAdvSet} className={classes.button} variant="outlined">{advText}</Button>
             </div>
             {showAdv && (<div>
-            <Typography variant="subtitle2" className={classes.space}>
-                Properties<span className={classes.text}>(optional)</span>
-            </Typography>
-            <TextField id="standard-basic" placeholder="e.g. size" variant="standard" />
-            <TextField id="standard-basic" placeholder="e.g. M" variant="standard" />
-            
-            <Typography variant="subtitle2" className={classes.space}>
-                Alternative text for NFT<span className={classes.text}>(optional)</span>
-            </Typography>
-            <TextField fullWidth id="standard-basic" placeholder="Image description in details(do not start with word image)" variant="standard" />
-            <Typography style={{ display: 'block' }} variant="caption" className={classes.text}>
-                Text that will be used in VoiceOver for people with disabilities
-            </Typography>
+                <Typography variant="subtitle2" className={classes.space}>
+                    Properties<span className={classes.text}>(optional)</span>
+                </Typography>
+                <TextField id="standard-basic" placeholder="e.g. size" variant="standard" />
+                <TextField id="standard-basic" placeholder="e.g. M" variant="standard" />
+
+                <Typography variant="subtitle2" className={classes.space}>
+                    Alternative text for NFT<span className={classes.text}>(optional)</span>
+                </Typography>
+                <TextField fullWidth id="standard-basic" placeholder="Image description in details(do not start with word image)" variant="standard" />
+                <Typography style={{ display: 'block' }} variant="caption" className={classes.text}>
+                    Text that will be used in VoiceOver for people with disabilities
+                </Typography>
             </div>)}
             <div className={classes.unlockdiv}>
                 <Button onClick={handleClickOpen} className={classes.buttongrad} variant="outlined">Create Item</Button>
@@ -147,13 +159,28 @@ export default function Collection() {
                         {"Collection"}
                     </DialogTitle>
                     <DialogContent>
+                        <div className={classes.undiv}>
+                        <Avatar 
+                        className={classes.avatar}
+                         alt="collection"
+                         src=""
+                         sx={{ width: 90, height: 90 }}>
+                            C
+                        </Avatar>
+                        <div className={classes.above}>
+                        <Typography style={{ display: 'block' }} variant="caption" className={classes.text}>
+                            We recommend an image {<br/>} of atleast 400 x 400. Gifs work {<br/>} too.
+                        </Typography>
+                        <Button className={classes.buttongrad} variant="outlined">Choose File</Button>
+                        </div>
+                        </div>
                         <Typography variant="subtitle2" className={classes.space}>
                             Display Name <span className={classes.text}>(required)</span>
                         </Typography>
 
                         <TextField fullWidth id="standard-basic" placeholder="Enter Token NAME" variant="standard" />
                         <Typography style={{ display: 'block' }} variant="caption" className={classes.text}>
-                            Will be used as public URL
+                           Token name cannot be changed in future.
                         </Typography>
                         <Typography variant="subtitle2" className={classes.space}>
                             Symbol <span className={classes.text}>(optional)</span>
@@ -173,13 +200,10 @@ export default function Collection() {
                         <Typography style={{ display: 'block' }} variant="caption" className={classes.text}>
                             Will be used as public URL
                         </Typography>
-                        <DialogContentText id="alert-dialog-description">
-                            Let Google help apps determine location. This means sending anonymous
-                            location data to Google, even when no apps are running.
-                        </DialogContentText>
+                       
                     </DialogContent>
-                   <div className={classes.center}>
-                    <Button className={classes.buttongrad} variant="outlined">Create Collection</Button>
+                    <div className={classes.center}>
+                        <Button className={classes.buttongrad} variant="outlined">Create Collection</Button>
                     </div>
                 </Dialog>
             </div>

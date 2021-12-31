@@ -32,6 +32,12 @@ const useStyles = makeStyles({
 
 function Items() {
     const classes = useStyles()
+
+
+
+    const handleItemClick = (event) => {
+        console.log(event)
+    }
     return (
         <div className={classes.container}>
             <Typography variant='h6' className={classes.heading}>
@@ -39,41 +45,31 @@ function Items() {
             </Typography>
             <Grid container spacing={2} className={classes.grid}>
                 <Grid item xs={4}>
-                    <ToggleButtonGroup
-                        exclusive                       
-                        aria-label="text alignment"
-                    >
-                        <ToggleButton value="left" aria-label="left aligned">
-                            hi
-                        </ToggleButton>
-                        <ToggleButton value="center" aria-label="centered">
-                            bye
-                        </ToggleButton>
-                        </ToggleButtonGroup>
-                        <div className={classes.item}>
-                            <ColorLens color="disabled" className={classes.icon} />
-                            <Typography variant="caption" className={classes.text}>
-                                Art
-                            </Typography>
-                        </div>
-                        <div className={classes.item}>
-                            <ColorLens color="disabled" className={classes.icon} />
-                            <Typography variant="caption" className={classes.text}>
-                                NSFW
-                            </Typography>
-                        </div>
-                        <div className={classes.item}>
-                            <ColorLens color="disabled" className={classes.icon} />
-                            <Typography variant="caption" className={classes.text}>
-                                DeFi
-                            </Typography>
-                        </div>
-                        <div className={classes.item}>
-                            <CameraAlt color="disabled" className={classes.icon} />
-                            <Typography variant="caption" className={classes.text}>
-                                Photography
-                            </Typography>
-                        </div>
+
+                    <div className={classes.item} onClick={handleItemClick}>
+                        <ColorLens color="disabled" className={classes.icon} />
+                        <Typography variant="caption" className={classes.text}>
+                            Art
+                        </Typography>
+                    </div>
+                    <div className={classes.item}>
+                        <ColorLens color="disabled" className={classes.icon} />
+                        <Typography variant="caption" className={classes.text}>
+                            NSFW
+                        </Typography>
+                    </div>
+                    <div className={classes.item}>
+                        <ColorLens color="disabled" className={classes.icon} />
+                        <Typography variant="caption" className={classes.text}>
+                            DeFi
+                        </Typography>
+                    </div>
+                    <div className={classes.item}>
+                        <CameraAlt color="disabled" className={classes.icon} />
+                        <Typography variant="caption" className={classes.text}>
+                            Photography
+                        </Typography>
+                    </div>
                 </Grid>
                 <Grid item xs={4}>
                     <div className={classes.item}>
