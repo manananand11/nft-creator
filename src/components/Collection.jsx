@@ -70,6 +70,9 @@ const useStyles = makeStyles({
     },
     avatar:{
         margin:"10px"
+    },
+    blue:{
+        color:"#1976d2"
     }
 
 })
@@ -155,7 +158,7 @@ export default function Collection() {
                     aria-labelledby="alert-dialog-title"
                     aria-describedby="alert-dialog-description"
                 >
-                    <DialogTitle id="alert-dialog-title">
+                    <DialogTitle id="alert-dialog-title" className={classes.blue}>
                         {"Collection"}
                     </DialogTitle>
                     <DialogContent>
