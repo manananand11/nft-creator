@@ -63,6 +63,8 @@ const useStyles = makeStyles({
 
 export default function Collection() {
     const [open, setOpen] = React.useState(false);
+    const [advText,setAdvText] = React.useState("HIDE ADVANCED SETTINGS");
+    const [showAdv,setShowAdv]=React.useState(true)
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -71,6 +73,19 @@ export default function Collection() {
     const handleClose = () => {
         setOpen(false);
     };
+    const handleAdvSet = () =>{
+        if(showAdv)
+        {
+            setAdvText("SHOW ADVANCED SETTINGS")
+            setShowAdv(false)
+        }
+        else{
+            setAdvText("HIDE ADVANCED SETTINGS")
+            setShowAdv(true)
+        }
+        
+        
+    }
     const classes = useStyles()
     return (
         <div>
@@ -99,14 +114,15 @@ export default function Collection() {
                 Suggested: 0%, 10% ,20%, 30%
             </Typography>
             <div className={classes.center}>
-                <Button className={classes.button} variant="outlined">HIDE ADVANCED SETTINGS</Button>
+                <Button onClick={handleAdvSet} className={classes.button} variant="outlined">{advText}</Button>
             </div>
+            {showAdv && (<div>
             <Typography variant="subtitle2" className={classes.space}>
                 Properties<span className={classes.text}>(optional)</span>
             </Typography>
             <TextField id="standard-basic" placeholder="e.g. size" variant="standard" />
             <TextField id="standard-basic" placeholder="e.g. M" variant="standard" />
-
+            
             <Typography variant="subtitle2" className={classes.space}>
                 Alternative text for NFT<span className={classes.text}>(optional)</span>
             </Typography>
@@ -114,6 +130,7 @@ export default function Collection() {
             <Typography style={{ display: 'block' }} variant="caption" className={classes.text}>
                 Text that will be used in VoiceOver for people with disabilities
             </Typography>
+            </div>)}
             <div className={classes.unlockdiv}>
                 <Button onClick={handleClickOpen} className={classes.buttongrad} variant="outlined">Create Item</Button>
                 <Button className={classes.buttonsmall} size="small">Unsaved Changes <HelpOutlineOutlined /></Button>

@@ -1,11 +1,11 @@
 import { CameraAlt, ColorLens, Language, MusicNote, PanTool, SportsEsports, TagFaces, Webhook } from '@mui/icons-material';
-import { Grid, Typography } from '@mui/material'
+import { Grid, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
 import { makeStyles, styled } from '@mui/styles'
 import React from 'react'
 
 const useStyles = makeStyles({
-    container:{
-marginBottom:"20px!important"
+    container: {
+        marginBottom: "20px!important"
     },
     heading: {
         marginTop: "40px!important",
@@ -17,12 +17,12 @@ marginBottom:"20px!important"
     text: {
         color: "#9c9c9c",
         marginLeft: "10px!important",
-       
+
     },
     item: {
         display: "flex",
         alignItems: "center",
-       
+
         marginBottom: "10px!important"
     },
     icon: {
@@ -39,30 +39,41 @@ function Items() {
             </Typography>
             <Grid container spacing={2} className={classes.grid}>
                 <Grid item xs={4}>
-                    <div className={classes.item}>
-                        <ColorLens color="disabled" className={classes.icon} />
-                        <Typography variant="caption" className={classes.text}>
-                            Art
-                        </Typography>
-                    </div>
-                    <div className={classes.item}>
-                        <ColorLens color="disabled" className={classes.icon} />
-                        <Typography variant="caption" className={classes.text}>
-                            NSFW
-                        </Typography>
-                    </div>
-                    <div className={classes.item}>
-                        <ColorLens color="disabled" className={classes.icon} />
-                        <Typography variant="caption" className={classes.text}>
-                            DeFi
-                        </Typography>
-                    </div>
-                    <div className={classes.item}>
-                        <CameraAlt color="disabled" className={classes.icon} />
-                        <Typography variant="caption" className={classes.text}>
-                            Photography
-                        </Typography>
-                    </div>
+                    <ToggleButtonGroup
+                        exclusive                       
+                        aria-label="text alignment"
+                    >
+                        <ToggleButton value="left" aria-label="left aligned">
+                            hi
+                        </ToggleButton>
+                        <ToggleButton value="center" aria-label="centered">
+                            bye
+                        </ToggleButton>
+                        </ToggleButtonGroup>
+                        <div className={classes.item}>
+                            <ColorLens color="disabled" className={classes.icon} />
+                            <Typography variant="caption" className={classes.text}>
+                                Art
+                            </Typography>
+                        </div>
+                        <div className={classes.item}>
+                            <ColorLens color="disabled" className={classes.icon} />
+                            <Typography variant="caption" className={classes.text}>
+                                NSFW
+                            </Typography>
+                        </div>
+                        <div className={classes.item}>
+                            <ColorLens color="disabled" className={classes.icon} />
+                            <Typography variant="caption" className={classes.text}>
+                                DeFi
+                            </Typography>
+                        </div>
+                        <div className={classes.item}>
+                            <CameraAlt color="disabled" className={classes.icon} />
+                            <Typography variant="caption" className={classes.text}>
+                                Photography
+                            </Typography>
+                        </div>
                 </Grid>
                 <Grid item xs={4}>
                     <div className={classes.item}>
@@ -85,7 +96,7 @@ function Items() {
                     </div>
                 </Grid>
                 <Grid item xs={4}>
-                <div className={classes.item}>
+                    <div className={classes.item}>
                         <SportsEsports color="disabled" className={classes.icon} />
                         <Typography variant="caption" className={classes.text}>
                             Games
@@ -94,7 +105,7 @@ function Items() {
                     <div className={classes.item}>
                         <PanTool color="disabled" className={classes.icon} />
                         <Typography variant="caption" className={classes.text}>
-                         Punks
+                            Punks
                         </Typography>
                     </div>
                     <div className={classes.item}>

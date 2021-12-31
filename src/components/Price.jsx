@@ -117,7 +117,7 @@ function Price() {
                 Price
             </Typography>
             <div className={classes.unlockdiv}>
-            <TextField fullWidth id="standard-basic" placeholder="Amount" variant="standard" />
+            <TextField fullWidth id="standard-basic" placeholder="Amount" variant="standard"  type="number" />
             <Typography variant="subtitle2" className={classes.texta}>
                 ETH
             </Typography>

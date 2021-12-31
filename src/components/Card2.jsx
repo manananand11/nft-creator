@@ -1,6 +1,6 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, Typography } from '@mui/material'
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, Typography } from '@mui/material'
 import { makeStyles, styled } from '@mui/styles'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const useStyles = makeStyles({
     heading: {
@@ -47,6 +47,10 @@ background: "linear-gradient(0deg, rgba(55,81,118,1) 0%, rgba(29,117,171,1) 46%,
 }));
 function Card2(props) {
     const classes = useStyles()
+    const [imageUrl, setImageUrl] = useState(null);
+    useEffect(() => {
+        setImageUrl(props.imgUrl)
+    }, [props.imgUrl]);
     return (
         <div>
             <Typography variant='h6' className={classes.heading}>
@@ -59,6 +63,12 @@ function Card2(props) {
                            {props.content}
                         </Typography>
                     </CardContent>
+                    {imageUrl && (
+                        <Box mt={2} textAlign="center">
+                            <div>Image Preview:</div>
+                            <img src={imageUrl} alt="preview" height="200px" />
+                        </Box>
+                    )}
                 </CardActionArea>
                 {/* <CardActions className={classes.center}>
                     <CustomButton >

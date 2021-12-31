@@ -1,7 +1,7 @@
 import { LocalOffer } from '@mui/icons-material'
 import { Card, Grid, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import React from 'react'
+import React, { useState } from 'react'
 import Card1 from './Card1'
 import Card2 from './Card2'
 import Card3 from './Card3'
@@ -26,6 +26,8 @@ const useStyles = makeStyles({
 
 function Main() {
     const classes = useStyles()
+    const [imgUrl, setImgUrl] = useState(null);
+    // const [cover, setCover] = useState(1);
     return (
         <div>
             <Typography variant="h4" component="h2" className={classes.heading}>
@@ -38,11 +40,14 @@ function Main() {
                         uploadName="Upload File"
                         content=" JPG,PNG,GIF,WEBP,MP4 or MP3 , Max 100mb. 
          (620 x 620 recommended)"
+                        setImgUrl={setImgUrl}
+                        cover={false}
                     />
                     <Card1
                         uploadName="Upload Cover"
-                        content=" JPG,PNG,GIF,WEBP,MP4 or MP3 , Max 100mb. 
-         "
+                        content=" JPG,PNG,GIF,WEBP,MP4 or MP3 , Max 100mb."
+                        cover={true}
+
                     />
                     <Typography variant="caption" className={classes.text}>
                         Please add cover image to your media file
@@ -64,11 +69,12 @@ function Main() {
                     <Card2
                         uploadName="Preview"
                         content=" Upload File to preview your brand new NFT"
+                        imgUrl={imgUrl}
                     />
 
                 </Grid>
             </Grid>
-            
+
         </div>
     )
 }
