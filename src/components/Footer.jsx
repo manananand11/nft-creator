@@ -85,7 +85,7 @@ export default function Footer() {
     return (
         <div>
             <Grid container className={classes.grid}>
-                <Grid item xs={6}>
+                <Grid item md={6} xs={12}>
                     <div className={classes.container}>
                         <Typography variant="subtitle2" className={classes.heading} >
                             Follow us
@@ -160,7 +160,7 @@ export default function Footer() {
 
                     </div>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item md={6} xs={12}>
                     <div className={classes.container}>
                         <Typography variant="subtitle2" className={classes.heading} >
                             Stay in the loop

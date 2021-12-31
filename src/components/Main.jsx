@@ -35,7 +35,7 @@ function Main() {
             </Typography>
 
             <Grid container spacing={2}>
-                <Grid item xs={6}>
+                <Grid item md={6} xs={12}>
                     <Card1
                         uploadName="Upload File"
                         content=" JPG,PNG,GIF,WEBP,MP4 or MP3 , Max 100mb. 
@@ -65,7 +65,7 @@ function Main() {
                     <Collection />
 
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item md={6} xs={12}>
                     <Card2
                         uploadName="Preview"
                         content=" Upload File to preview your brand new NFT"
