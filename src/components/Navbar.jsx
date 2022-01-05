@@ -33,6 +33,7 @@ const useStyles = makeStyles({
     },
     icons: {
         display: "flex",
+        justifyContent: "space-between"
 
     },
 
@@ -52,8 +53,9 @@ const ColorButton = styled(Button)(({
     },
 }));
 const AlertButton = styled(Button)(({
-    borderRadius: "50%",
-    minWidth:"50!important",
+    borderRadius: "10em",
+    marginRight:"10px",
+    minWidth:"40px",
     padding: "0!important",
     color: "grey",
     backgroundColor: "white",
@@ -71,6 +73,7 @@ const NotifButton = styled(Button)(({
 
     borderRadius: "10em",
     border: "2px solid rgba(25, 118, 210, 0.5)",
+    marginRight:"10px",
     color: "#158fce",
     backgroundColor: "white",
     '&:hover': {
